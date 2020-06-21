@@ -19,7 +19,7 @@ def nyc_pigeon_organizer(data)
   while count < pigeons_symbols.length do
     count2 = 0
     while count2 < colors.length do
-      if data[:color][colors[count2]].include?(pigeons_symbols[count]1)
+      if data[:color][colors[count2]].include?(pigeons_symbols[count1])
         pigeons_hash[pigeons_symbols[count1]][:color] << data[:color][colors[count2]]
       end
       count2 += 1
