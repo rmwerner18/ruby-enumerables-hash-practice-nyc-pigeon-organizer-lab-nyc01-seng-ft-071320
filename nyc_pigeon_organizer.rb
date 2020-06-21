@@ -12,26 +12,32 @@ def nyc_pigeon_organizer(data)
     pigeons_hash.merge!(pigeons_symbols[count] => {:color => [], :gender => [], :lives => []})
     count += 1
   end
-  count1 = 0
-  data_attributs_array = data.keys
-  binding.pry
-  while count1 < pigeons_hash.length do
+  colors = data[:color].keys
+  genders = data[:gender].keys
+  lives = data[:lives].keys
+  count = 0
+  while count < pigeons_symbols.length do
+    count1 = 0
+    while count1 < colors.length do
+      if data[:color][colors[count1]].include?(pigeons_symbols[count])
+        pigeons_hash[pigeons_symbols[count]][:color] << data[:color][colors[count1]]
+      end
+      count1 += 1
+    end
     count2 = 0
-    while count2 < 3 do
-      count3 = 0
-      while count3 < data.length do
-        count4 = 0
-        while count4 < data[count3].length do
-          if data[count3][count4].include?(pigeons[count1])
-            pigeons_hash[count][count2] << data[count3][count4].to_s
-          end
-          count4 += 1
-        end
-        count3 += 1
+    while count2 < genders.length do
+      if data[:gender][genders[count2]].include?(pigeons_symbols[count])
+        pigeons_hash[pigeons_symbols[count]][:gender] << data[:gender][genders[count2]]
       end
       count2 += 1
     end
-    count1 += 1
+    count3 = 0
+    while count3 < lives.length do
+      if data[:lives][lives[count3]].include?(pigeons_symbols[count])
+        pigeons_hash[pigeons_symbols[count]][:lives] << data[:lives][lives[count3]]
+      end
+      count3 += 1
+    end
+    count += 1
   end
-  binding.pry
-end
+  
