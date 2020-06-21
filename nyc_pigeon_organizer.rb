@@ -40,3 +40,4 @@ def nyc_pigeon_organizer(data)
     end
     count += 1
   end
+  binding.pry
