@@ -1,11 +1,15 @@
 require 'pry'
 
 def nyc_pigeon_organizer(data)
-  pigeons_symbols = []
+  pigeons_symbols = [] 
   pigeons_hash = {}# write your code here!
   pigeons = [data[:gender][:male], data[:gender][:female]].flatten()
   pigeons.each do |element|
     pigeons_symbols << ":#{element}"
+  end
+  pigeons_strings = []
+  pigeons_symbols.each do |element|
+    pigeons_strings << element.to_s
   end
   count = 0
   while count < pigeons_symbols.length do
@@ -16,7 +20,7 @@ def nyc_pigeon_organizer(data)
   genders = data[:gender].keys
   lives = data[:lives].keys
   count1 = 0
-  while count < pigeons_symbols.length do
+  while count1 < pigeons_symbols.length do
     count2 = 0
     while count2 < colors.length do
       if data[:color][colors[count2]].include?(pigeons_symbols[count1])
