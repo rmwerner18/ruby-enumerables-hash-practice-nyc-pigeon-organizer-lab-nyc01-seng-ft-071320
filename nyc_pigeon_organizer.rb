@@ -15,7 +15,6 @@ def nyc_pigeon_organizer(data)
   colors = data[:color].keys
   genders = data[:gender].keys
   lives = data[:lives].keys
-  binding.pry
   count = 0
   while count < pigeons_symbols.length do
     count1 = 0
@@ -41,4 +40,6 @@ def nyc_pigeon_organizer(data)
     end
     count += 1
   end
+  pigeons_hash
+  binding.pry
 end
