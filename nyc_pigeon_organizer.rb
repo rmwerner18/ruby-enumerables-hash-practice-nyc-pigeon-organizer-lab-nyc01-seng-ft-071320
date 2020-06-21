@@ -1,7 +1,7 @@
 require 'pry'
 
 def nyc_pigeon_organizer(data)
-  pigeons_symbols = [] 
+  pigeons_symbols = []
   pigeons_hash = {}# write your code here!
   pigeons = [data[:gender][:male], data[:gender][:female]].flatten()
   pigeons.each do |element|
