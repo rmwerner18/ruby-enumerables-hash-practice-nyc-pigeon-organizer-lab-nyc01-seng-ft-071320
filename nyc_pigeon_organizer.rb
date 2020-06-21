@@ -13,7 +13,7 @@ def nyc_pigeon_organizer(data)
   end
   count = 0
   while count < pigeons_symbols.length do
-    pigeons_hash.merge!(pigeons_symbols[count] => {:color => [], :gender => [], :lives => []})
+    pigeons_hash.merge!(pigeons_strings[count] => {:color => [], :gender => [], :lives => []})
     count += 1
   end
   colors = data[:color].keys
