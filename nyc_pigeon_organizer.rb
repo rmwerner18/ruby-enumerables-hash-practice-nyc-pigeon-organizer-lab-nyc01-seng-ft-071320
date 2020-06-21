@@ -37,5 +37,4 @@ def nyc_pigeon_organizer(data)
     count1 += 1
   end
   pigeons_hash
-  binding.pry
 end
